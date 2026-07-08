@@ -98,7 +98,6 @@ app.Run(async (HttpContext context) =>
     //    ");
     //}
 
-
     // CASO 2: Procesamiento de parámetros y evaluación de lógica de negocio
 
     context.Response.Headers["Content-Type"] = "text/html; charset=utf-8";
