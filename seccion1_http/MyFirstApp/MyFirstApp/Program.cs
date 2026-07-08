@@ -5,7 +5,9 @@ var app = builder.Build();
 
 app.Run(async (HttpContext context) =>
 {
-    //Ejercicio 1 : Modificacion del estado de Response
+    //Ejercicio 1: Manipulación explícita del código de estado (HTTP Status Code)
+    // Determina el resultado de la transacción antes de enviar datos al cliente.
+
     //if (1 == 1)
     //{
     //    context.Response.StatusCode = 200;
@@ -15,7 +17,8 @@ app.Run(async (HttpContext context) =>
     //    context.Response.StatusCode=400;
     //}
 
-    //Ejercicio 2 : Manejo y asignacion de Claves
+    // Ejercicio 2: Inspección de rutas de red y asignación de metadatos (Headers)
+
     //string path = context.Request.Path;
     //string method = context.Request.Method;
 
@@ -29,7 +32,9 @@ app.Run(async (HttpContext context) =>
     //await context.Response.WriteAsync($"<p>{method}</p>");
 
 
-    //Ejercicio 3: Validacion del tipo de metodo y manejo de parametros con Query
+    // Ejercicio 3: Enrutamiento lógico y validación estructural de Query Strings
+    // Filtra las peticiones de tipo GET que contienen argumentos clave en la URL.
+
     //context.Response.Headers["Content-type"] = "text/html";
     //if (context.Request.Method == "GET")
     //{
@@ -40,7 +45,9 @@ app.Run(async (HttpContext context) =>
     //    }
     //}
 
-    //Ejercicio 4: Verificacion del tipo de navegador con User-Agent
+    // Ejercicio 4: Extracción de metadatos del cliente (User-Agent)
+    // Analiza la cabecera enviada por el navegador para identificar el entorno/S.O.
+
     //context.Response.Headers["Content-type"] = "text/html";
     //if (context.Request.Headers.ContainsKey("User-Agent"))
     //{
@@ -49,9 +56,10 @@ app.Run(async (HttpContext context) =>
     //}
 
 
-    // CASOS ADICIONALES : Manejo de Path personalizados
+    // CASOS PRÁCTICOS: MANEJO DE PATHS PERSONALIZADOS Y RENDERIZADO DINÁMICO
 
-    //CASO 1
+    // CASO 1: Enrutamiento manual (Mapeo de Rutas y códigos de error controlados)
+
     //context.Response.Headers["Content-Type"] = "text/html; charset=utf-8";
     //string path = context.Request.Path.ToString().ToLower();
 
@@ -90,7 +98,9 @@ app.Run(async (HttpContext context) =>
     //    ");
     //}
 
-    //CASO 2
+
+    // CASO 2: Procesamiento de parámetros y evaluación de lógica de negocio
+
     context.Response.Headers["Content-Type"] = "text/html; charset=utf-8";
     if (context.Request.Query.ContainsKey("nombre") && context.Request.Query.ContainsKey("nota"))
     {
