@@ -1,4 +1,4 @@
-# 📁 Sección 1: Fundamentos del Protocolo HTTP
+# 📁 Fundamentos del Protocolo HTTP
 
 Este directorio contiene los laboratorios prácticos correspondientes al
 **Tema 1** del curso, enfocado en la manipulación nativa del protocolo 
